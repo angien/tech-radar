@@ -1,0 +1,114 @@
+
+
+
+{
+	"level": "1", 
+	"name": "",
+	"Full name": "",
+	"Relavance": "",
+	"children": [
+	{
+		"level": "2", 
+		"name": "",
+		"Full name": "",
+		"Relavance": "",
+		"sector": "Cisco on Cisco",
+		"children": [ 
+		{
+			"level": "3",
+			"name": "",
+			"Full name": "",
+			"Relavance": "",
+			"children": [
+			{
+				"level": "4", "name": "","children": [
+					{ "level": "5", "Full name": "Cisco Network Convergence System", "name": "CNCS", "Relavance": "medium"},
+					{ "level": "5", "Full name": "Smart Experience Kisko","name": "SEK", "Relavance": "medium"}
+				]
+			}]
+		}]
+	},
+	{
+		"level": "2", 
+		"name": "",
+		"Full name": "",
+		"Relavance": "",
+		"sector": "Process",		
+		"children": [ 
+		{
+			"level": "3",
+			"name": "",
+			"Full name": "",
+			"Relavance": "",
+			"children": [
+			{
+				"level": "4", "name": "","children": [
+					{ "level": "5", "Full name": "ASP SLA Standadization", "name": "ASP SLA", "Relavance": "high"},
+					{ "level": "5", "Full name": "WEM Platform Engagement Process", "name": "WEM PEP", "Relavance": "high"},
+					{ "level": "5", "Full name": "IT Mobile App Engagement", "name": "IT MAE", "Relavance": "low"},
+					{ "level": "5", "Full name": "Startup lab","name": "Startup Lab", "Relavance": "low"}
+				]
+			}]
+		}]
+	},
+	{
+		"level": "2", 
+		"name": "",
+		"Full name": "",
+		"Relavance": "",
+		"sector": "Web Platform",		
+		"children": [ 
+		{
+			"level": "3",
+			"name": "CQ P1",
+			"Full name": "ADOBE CQ Phase1",
+			"Relavance": "high",
+			"children": [
+			{
+				"level": "4", "name": "","children": [
+					{ "level": "5", "Full name": "External API Standard", "name": "E API S", "Relavance": "medium"},
+					{ "level": "5", "Full name": "Smart Connected Experience", "name": "SCE", "Relavance": "high"},
+					{ "level": "5", "Full name": "UI Market place", "name": "UIM", "Relavance": "high"},
+					{ "level": "5", "Full name": "ADOBE CQ on Cloud","name": "CQ On Cloud", "Relavance": "high"},
+					{ "level": "5", "Full name": "ADOBE CQ Commerce Engine", "name": "CQ CE", "Relavance": "high"},
+					{ "level": "5", "Full name": "ADOBE CQ Experience Personalization", "name": "CQ EP", "Relavance": "high"},
+					{ "level": "5", "Full name": "Localization Capability", "name": "LC", "Relavance": "medium"},
+					{ "level": "5", "Full name": "Tag Management", "name": "TM", "Relavance": "high"}
+				]
+			}]
+		}]
+	},
+	{
+		"level": "2", 
+		"name": "",
+		"Full name": "",
+		"Relavance": "",
+		"sector": "Resiliency & Performance",	
+		"children": [ 
+		{
+			"level": "3",
+			"name": "",
+			"Full name": "",
+			"Relavance": "",
+			"children": [
+			{
+				"level": "4", 
+				"name": "A EDOS",
+				"Full name": "Akamai Edge DOS",	
+				"Relavance": "medium",				
+				"children": [
+					{ "level": "5", "Full name": "", "name": "", "Relavance": ""}
+				]
+			},
+			{
+				"level": "4", 
+				"name": "A RUM",
+				"Full name": "Akamai RUM",
+				"Relavance": "medium",
+				"children": [
+					{ "level": "5", "Full name": "", "name": "", "Relavance": ""}
+				]
+			}]
+		}]
+	}]
+}

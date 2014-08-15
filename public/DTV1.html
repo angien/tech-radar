@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+path {
+  stroke: #fff;
+  fill: #000
+  fill-rule: evenodd;
+}
+
+text {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 1000,
+    height = 800,
+    radius = Math.min(width, height) / 2;
+
+var x = d3.scale.linear()
+    .range([0, 1.25 * Math.PI]);
+
+var y = d3.scale.linear()
+    .range([0, radius]);
+
+var color = d3.scale.category20c();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + (height / 2 + 10) + ") rotate(247)");
+
+var partition = d3.layout.partition()
+	.value(function(d) { return d.level; });
+	//console.log(partition);
+
+var arc = d3.svg.arc()
+    .startAngle(function(d) { return Math.max(0, Math.min(1.25 * Math.PI, x(d.x))); })
+    .endAngle(function(d) { return Math.max(0, Math.min(1.25 * Math.PI, x(d.x + d.dx))); })
+	.innerRadius(function(d) { return Math.max(0, y(d.y)); })
+    .outerRadius(function(d) { return Math.max(0, y(d.y + d.dy)); })
+	
+	
+d3.json("DTV1.json", function(error, root) {
+  var g = svg.selectAll("g")
+    .data(partition.nodes(root))
+    .enter().append("g");
+
+ var path = g.append("path")
+    .attr("d", arc)
+    .style("fill", function(d) { 
+	if(d.level == 1)
+		return "#fff"; 
+	else 
+		return(color(d.level));
+		});
+			//return color((d.children ? d : d.parent).level);});
+	   
+  var text = g.append("text")
+	//.attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")rotate(" + computeTextRotation(d) + ")"; })
+	//.attr('text-anchor', "start")
+	.attr("transform", function(d) { return "rotate(" + computeTextRotation(d)  + ")"; })
+	.attr("x", function(d) { 
+				if(d.stage)
+					return d.y; 
+				else
+					return y(d.y); })
+    .attr("dx", "20") // margin
+    .attr("dy", ".35em") // vertical-align
+	.text(function(d) { return d.name; });
+	
+	var circle = g.append("circle")
+	.attr("transform", function(d) {return "rotate(" + computeTextRotation(d)  + ")"; })
+	.attr("cx", function(d) { return y(d.y + d.dy/10); })
+	.attr("cy", ".10em" )
+	.attr("r", function(d){
+		if (d.Relavance =="high") 
+			return "5"; 
+		else if (d.Relavance =="medium") 
+			return "4"; 
+		else if (d.Relavance =="low")
+			return "3";
+		else 
+			return "0";	})
+	.style("fill", function(d) { 
+		if (d.Relavance =="high") 
+			return "#f00"; 
+		else if (d.Relavance =="medium") 
+			return "#00f"; 
+		else if (d.Relavance =="low")
+			return "#ff0";
+		else 
+			return color(d.level);	
+		});
+});
+
+d3.select(self.frameElement).style("height", height + "px");
+
+// Interpolate the scales!
+function arcTween(d) {
+  var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
+      yd = d3.interpolate(y.domain(), [d.y, 1]),
+      yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
+  return function(d, i) {
+    return i
+        ? function(t) { return arc(d); }
+        : function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); return arc(d); };
+  };
+}
+
+function computeTextRotation(d) {
+
+
+ var t = (x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+	//return (t > 90) ? 180 + t : t;
+	return t;
+  
+}
+ </script>
+ </body>
+</html>
