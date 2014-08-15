@@ -19,6 +19,7 @@ text {
 </style>
 </head>
 <body>
+<a href="/images">Images</a><br>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -126,6 +127,10 @@ function computeTextRotation(d) {
 	return t;
   
 }
+
+d3.selectAll("arc").transition()
+    .duration(750)
+     .style("color", "black");
  </script>
  </body>
 </html>
