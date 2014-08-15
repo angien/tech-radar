@@ -1,0 +1,19 @@
+{
+  "name": "tech-radar",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://anginguy@gitlab.cisco.com/anginguy/tech-radar.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
