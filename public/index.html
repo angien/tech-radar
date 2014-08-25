@@ -2,6 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap-3.2.0-dist//css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/bootstrap-3.2.0-dist//css/bootstrap-theme.min.css" rel="stylesheet">
 <style>
 
 path {
@@ -16,18 +20,22 @@ text {
   font-weight: bold;
 }
 
-div.tooltip {   
-  position: absolute;           
-  text-align: center;           
-  width: 60px;                  
-  height: 28px;                 
-  padding: 2px;             
-  font: 12px sans-serif;        
-  background: lightsteelblue;   
-  border: 0px;      
-  border-radius: 8px;           
-  pointer-events: none;         
+
+
+div.tooltip {
+  display: inline-block;
+  width:150px;
+  height:auto;
+  position: absolute;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 0 7px black;
 }
+
+
 
 </style>
 </head>
@@ -50,26 +58,21 @@ var y = d3.scale.linear()
 
 var color = d3.scale.category20c();
 
-var formatTime = d3.time.format("%e %B");
-
-
-
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height)
     .append("g") // adding group of objects
     .attr("transform", "translate(" + width / 2 + "," + (height / 2 + 10) + ") rotate(247)"); // rotates since usually starts at 12 position
 
+    // Define 'div' for tooltips
+var div = d3.select("body")
+  .append("div")  // declare the tooltip div 
+  .attr("class", "tooltip")              // apply the 'tooltip' class
+  .style("opacity", 0);                  // set the opacity to nil
 
-var div = svg.append("div")   
-    .attr("class", "tooltip")               
-    .style("opacity", 0);
-
-    
 var partition = d3.layout.partition()
 	.value(function(d) { return d.level; });
 	//console.log(partition);
-
 
 // size of the arcs
 var arc = d3.svg.arc()
@@ -78,11 +81,11 @@ var arc = d3.svg.arc()
 	.innerRadius(function(d) { return Math.max(0, y(d.y)); })
     .outerRadius(function(d) { return Math.max(0, y(d.y + d.dy)); })
 	
-	
 d3.json("DTV1.json", function(error, root) {
   var g = svg.selectAll("g") // selecting all group
     .data(partition.nodes(root)) // adding partition to group
     .enter().append("g"); // enter(): add g to container
+
 
  var path = g.append("path")
     .attr("d", arc)
@@ -106,31 +109,48 @@ d3.json("DTV1.json", function(error, root) {
 					return y(d.y); })
     .attr("dx", "20") // margin
     .attr("dy", ".35em") // vertical-align
-	.text(function(d) { return d.name; });
+	.text(function(d) { return d.name; } )
+  .on("mouseover", function(d) {    
+            div.transition()
+        .duration(500)  
+        .style("opacity", 0);
+      div.transition()
+        .duration(200)  
+        .style("opacity", .9);  
+      div .html(
+        '<a href= "http://SOMELINK.com">' + // The first <a> tag
+        d.name +
+        "</a>" +                          // closing </a> tag
+        "<br/>"  + d.fullname)  
+        .style("left", (d3.event.pageX) + "px")      
+        .style("top", (d3.event.pageY - 28) + "px");
+      });
 	
 	var circle = g.append("circle") // colored bullet/circles
 	.attr("transform", function(d) {return "rotate(" + computeTextRotation(d)  + ")"; })
 	.attr("cx", function(d) { return y(d.y + d.dy/10); })
 	.attr("cy", ".10em" )
 	.attr("r", function(d){
-		if (d.Relavance =="high") 
+		if (d.relevance =="high") 
 			return "5"; // radius of the circles
-		else if (d.Relavance =="medium") 
+		else if (d.relevance =="medium") 
 			return "4"; 
-		else if (d.Relavance =="low")
+		else if (d.relevance =="low")
 			return "3";
 		else 
 			return "0";	})
 	.style("fill", function(d) { 
-		if (d.Relavance =="high") 
+		if (d.relevance =="high") 
 			return "#f00"; 
-		else if (d.Relavance =="medium") 
+		else if (d.relevance =="medium") 
 			return "#00f"; 
-		else if (d.Relavance =="low")
+		else if (d.relevance =="low")
 			return "#ff0";
 		else 
 			return color(d.level);	
-		});
+		})
+
+   ;
 });
 
 // angie's tooltip stuff
@@ -183,5 +203,7 @@ function computeTextRotation(d) {
 
 
  </script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="/bootstrap-3.2.0-dist//js/bootstrap.min.js"></script>
  </body>
 </html>
