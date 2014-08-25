@@ -93,10 +93,13 @@ d3.csv("data.csv", function(error, data) {
   x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain([0, d3.max(data, function(d) { return d.close; })]);
 
- 
+  // Add the valueline path.
+  svg.append("path")    
+    .attr("class", "line")
+    .attr("d", valueline(data));
 
   // draw the scatterplot
-  svg.selectAll("text")                  
+  svg.selectAll("dot")                  
     .data(data)                     
   .enter().append("circle")               
     .attr("r", 5) 

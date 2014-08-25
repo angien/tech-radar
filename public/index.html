@@ -20,8 +20,6 @@ text {
   font-weight: bold;
 }
 
-
-
 div.tooltip {
   display: inline-block;
   width:150px;
@@ -36,11 +34,10 @@ div.tooltip {
 }
 
 
-
 </style>
 </head>
 <body>
-<a href="/images">Images</a> <a href="test.html">Test</a><br>
+<a href="/images">Images</a> <a href="test.html">Tooltips</a> <a href="test2.html">Labels</a><br>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -68,6 +65,7 @@ var svg = d3.select("body").append("svg")
 var div = d3.select("body")
   .append("div")  // declare the tooltip div 
   .attr("class", "tooltip")              // apply the 'tooltip' class
+
   .style("opacity", 0);                  // set the opacity to nil
 
 var partition = d3.layout.partition()
@@ -89,6 +87,7 @@ d3.json("DTV1.json", function(error, root) {
 
  var path = g.append("path")
     .attr("d", arc)
+    .attr('stroke-width', '0') // <-- very hacky way of getting rid of lines
     .style("fill", function(d) { 
 		if(d.level == 1)
 			return "#fff"; 
@@ -153,26 +152,12 @@ d3.json("DTV1.json", function(error, root) {
    ;
 });
 
-// angie's tooltip stuff
-svg.selectAll("path")    
-        .data(name)         
-    .enter().append("circle")                               
-        .attr("r", 5)       
-        .attr("cx", function(d) { return x(d.date); })       
-        .attr("cy", function(d) { return y(d.close); })     
-        .on("mouseover", function(d) {      
-            div.transition()        
-                .duration(200)      
-                .style("opacity", .9);      
-            div .html(formatTime(d.date) + "<br/>"  + d.close)  
-                .style("left", (d3.event.pageX) + "px")     
-                .style("top", (d3.event.pageY - 28) + "px");    
-            })                  
-        .on("mouseout", function(d) {       
-            div.transition()        
-                .duration(500)      
-                .style("opacity", 0);   
-        });
+
+
+
+
+
+
 
 
 d3.select(self.frameElement).style("height", height + "px");
@@ -204,6 +189,6 @@ function computeTextRotation(d) {
 
  </script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-     <script src="/bootstrap-3.2.0-dist//js/bootstrap.min.js"></script>
+     <script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
  </body>
 </html>
