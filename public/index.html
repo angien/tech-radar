@@ -12,6 +12,7 @@
     stroke: #fff;
     fill: #000
     fill-rule: evenodd;
+    stroke-width:6px;
   }
 
   div.tooltip {
@@ -86,8 +87,6 @@ d3.json("DTV1.json", function(error, root) {
 
     var path = g.append("path")
     .attr("d", arc)
-    .attr('stroke', '#fff') // <-- THIS
-    .attr('stroke-width', '6') // <-- very hacky way of getting rid of lines
     .style("fill", function(d) { 
       if(d.level == 1)
        return "#fff"; 
