@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'xlsx-to-json' ]
+2 info using npm@1.4.14
+3 info using node@v0.10.29
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json tech-radar@0.0.0 No description
+6 warn package.json tech-radar@0.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'xlsx-to-json', null ]
+9 verbose cache add name=undefined spec="xlsx-to-json" args=["xlsx-to-json",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'xlsx-to-json',
+10 verbose parsed url   path: 'xlsx-to-json',
+10 verbose parsed url   href: 'xlsx-to-json' }
+11 silly lockFile f4ac22ff-xlsx-to-json xlsx-to-json
+12 verbose lock xlsx-to-json C:\Users\anginguy\AppData\Roaming\npm-cache\f4ac22ff-xlsx-to-json.lock
+13 silly lockFile f4ac22ff-xlsx-to-json xlsx-to-json
+14 silly lockFile f4ac22ff-xlsx-to-json xlsx-to-json
+15 verbose addNamed [ 'xlsx-to-json', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile a13a20fb-xlsx-to-json xlsx-to-json@
+18 verbose lock xlsx-to-json@ C:\Users\anginguy\AppData\Roaming\npm-cache\a13a20fb-xlsx-to-json.lock
+19 silly addNameRange { name: 'xlsx-to-json', range: '*', hasData: false }
+20 verbose url raw xlsx-to-json
+21 verbose url resolving [ 'https://registry.npmjs.org/', './xlsx-to-json' ]
+22 verbose url resolved https://registry.npmjs.org/xlsx-to-json
+23 info trying registry request attempt 1 at 10:05:35
+24 http GET https://registry.npmjs.org/xlsx-to-json
+25 http 200 https://registry.npmjs.org/xlsx-to-json
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Mon, 29 Sep 2014 17:05:35 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"79VNTTL8E3GFSNYJZ77FVXOIE"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '9361',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '1280',
+26 silly registry.get     'x-served-by': 'cache-lax1429-LAX',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1412010335.404829,VS0,VE309',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly addNameRange number 2 { name: 'xlsx-to-json', range: '*', hasData: true }
+28 silly addNameRange versions [ 'xlsx-to-json',
+28 silly addNameRange   [ '0.0.0',
+28 silly addNameRange     '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '0.2.0',
+28 silly addNameRange     '0.2.1',
+28 silly addNameRange     '0.2.2',
+28 silly addNameRange     '0.2.3' ] ]
+29 verbose addNamed [ 'xlsx-to-json', '0.2.3' ]
+30 verbose addNamed [ '0.2.3', '0.2.3' ]
+31 silly lockFile ac13f3fb-xlsx-to-json-0-2-3 xlsx-to-json@0.2.3
+32 verbose lock xlsx-to-json@0.2.3 C:\Users\anginguy\AppData\Roaming\npm-cache\ac13f3fb-xlsx-to-json-0-2-3.lock
+33 silly lockFile f07086bc-x-to-json-xlsx-to-json-0-2-3-tgz https://registry.npmjs.org/xlsx-to-json/-/xlsx-to-json-0.2.3.tgz
+34 verbose lock https://registry.npmjs.org/xlsx-to-json/-/xlsx-to-json-0.2.3.tgz C:\Users\anginguy\AppData\Roaming\npm-cache\f07086bc-x-to-json-xlsx-to-json-0-2-3-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/xlsx-to-json/-/xlsx-to-json-0.2.3.tgz',
+35 verbose addRemoteTarball   '5e4c553cb249d283da4bac9546a9b7fc08b14a08' ]
+36 info retry fetch attempt 1 at 10:05:35
+37 verbose fetch to= C:\Users\anginguy\AppData\Local\Temp\npm-17728-tCJorv0H\registry.npmjs.org\xlsx-to-json\-\xlsx-to-json-0.2.3.tgz
+38 http GET https://registry.npmjs.org/xlsx-to-json/-/xlsx-to-json-0.2.3.tgz
+39 http 400 https://registry.npmjs.org/xlsx-to-json/-/xlsx-to-json-0.2.3.tgz
+40 error fetch failed https://registry.npmjs.org/xlsx-to-json/-/xlsx-to-json-0.2.3.tgz
+41 silly lockFile f07086bc-x-to-json-xlsx-to-json-0-2-3-tgz https://registry.npmjs.org/xlsx-to-json/-/xlsx-to-json-0.2.3.tgz
+42 silly lockFile f07086bc-x-to-json-xlsx-to-json-0-2-3-tgz https://registry.npmjs.org/xlsx-to-json/-/xlsx-to-json-0.2.3.tgz
+43 silly lockFile ac13f3fb-xlsx-to-json-0-2-3 xlsx-to-json@0.2.3
+44 silly lockFile ac13f3fb-xlsx-to-json-0-2-3 xlsx-to-json@0.2.3
+45 silly lockFile a13a20fb-xlsx-to-json xlsx-to-json@
+46 silly lockFile a13a20fb-xlsx-to-json xlsx-to-json@
+47 error Error: 400 Bad Request
+47 error     at WriteStream.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\fetch.js:58:12)
+47 error     at WriteStream.emit (events.js:117:20)
+47 error     at fs.js:1603:14
+47 error     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:105:5
+47 error     at Object.oncomplete (fs.js:107:15)
+48 error If you need help, you may report this *entire* log,
+48 error including the npm and node versions, at:
+48 error     <http://github.com/npm/npm/issues>
+49 error System Windows_NT 6.1.7601
+50 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "xlsx-to-json"
+51 error cwd C:\Users\anginguy\Documents\GitHub\tech-radar
+52 error node -v v0.10.29
+53 error npm -v 1.4.14
+54 verbose exit [ 1, true ]

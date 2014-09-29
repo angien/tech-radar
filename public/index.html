@@ -68,7 +68,26 @@ var x = d3.scale.linear()
   .style("opacity", 0);                  // set the opacity to nil
 
   var partition = d3.layout.partition()
-  .value(function(d) { return d.level; });
+  .value(function(d) { 
+    switch(d.level) {
+      case "Opportunity":
+        level = 5;
+        break;
+      case "Solution Validation":
+        level = 4;
+        break;
+      case "Live":
+        level = 3;
+        break;
+      case "Transition":
+        level = 2;
+        break;
+      case "root":
+        level = 1;
+        break;
+    }
+
+    return level; });
 	//console.log(partition);
 
 // "lengths" of the arcs
@@ -88,7 +107,7 @@ d3.json("DTV1.json", function(error, root) {
     var path = g.append("path")
     .attr("d", arc)
     .style("fill", function(d) { 
-      if(d.level == 1)
+      if(d.level == "root")
        return "#fff"; 
      else 
        return(color(d.level));
@@ -114,10 +133,10 @@ d3.json("DTV1.json", function(error, root) {
       .duration(200)  
       .style("opacity", .9);  
       div .html(
-        '<a href= "http://SOMELINK.com">' + // The first <a> tag
-        d.name +
+        '<a href= "/page.html?id='+d.id+'">' + // The first <a> tag
+        d.fullname +
         "</a>" +                          // closing </a> tag
-        "<br/>"  + d.fullname)  
+        "<br/>"  + d.desc)  
       .style("left", (d3.event.pageX) + "px")      
       .style("top", (d3.event.pageY - 28) + "px");
     });

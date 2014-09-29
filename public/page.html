@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Bootstrap core CSS -->
+  <link href="/bootstrap-3.2.0-dist//css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap theme -->
+  <link href="/bootstrap-3.2.0-dist//css/bootstrap-theme.min.css" rel="stylesheet">
+  <style>
+
+  path {
+    stroke: #fff;
+    fill: #000
+    fill-rule: evenodd;
+    stroke-width:6px;
+  }
+
+  div.tooltip {
+    display: inline-block;
+    width:150px;
+    height:auto;
+    position: absolute;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 0 7px black;
+  }
+
+
+  </style>
+</head>
+<body>
+  <a href="/">Back</a><br>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script>
+
+
+
+function getUrlParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}    
+
+var id = getUrlParameter('id');
+console.log(id);
+
+$.getJSON( "techradar.json", function( json ) {
+for(var entry in json) {
+    console.log("blah= "+json.entry[name]);
+}
+
+ });
+
+
+</script>
+
+</body>
+</html>

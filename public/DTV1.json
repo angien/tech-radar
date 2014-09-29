@@ -1,43 +1,43 @@
-{ "level": "1", "name": "", "fullname": "", "relevance": "", "children": [
-		{ "level": "2", "name": "","fullname": "","relevance": "","sector": "Cisco on Cisco","children": [ 
-			{ "level": "3","name": "","fullname": "","relevance": "","children": [
-				{ "level": "4", "name": "","children": [
-					{ "level": "5", "fullname": "Cisco Network Convergence System", "name": "CNCS", "relevance": "medium"},
-					{ "level": "5", "fullname": "Smart Experience Kisko","name": "SEK", "relevance": "medium"} ]
+{ "level": "root", "name": "", "id":"","fullname": "", "desc": "write description", "relevance": "", "children": [
+		{ "level": "Transition","sector": "Cisco on Cisco","name": "","id":"","fullname": "","desc": "write description", "relevance": "","children": [ 
+			{ "level": "Live","name": "","id":"","fullname": "","desc": "write description", "relevance": "","children": [
+				{ "level": "Solution Validation", "name": "","children": [
+					{ "level": "Opportunity", "id":"","fullname": "Cisco Network Convergence System", "name": "CNCS", "desc": "write description", "relevance": "medium"},
+					{ "level": "Opportunity", "id":"","fullname": "Smart Experience Kisko","name": "SEK", "desc": "write description", "relevance": "medium"} ]
 				} ]
 			} ]
 		},
-		{ "level": "2", "name": "","fullname": "","relevance": "","sector": "Process",	"children": [ 
-			{ "level": "3","name": "","fullname": "","relevance": "", "children": [
-				{"level": "4", "name": "","children": [
-					{ "level": "5", "fullname": "ASP SLA Standadization", "name": "ASP SLA", "relevance": "high"},
-					{ "level": "5", "fullname": "WEM Platform Engagement Process", "name": "WEM PEP", "relevance": "high"},
-					{ "level": "5", "fullname": "IT Mobile App Engagement", "name": "IT MAE", "relevance": "low"},
-					{ "level": "5", "fullname": "Startup lab","name": "Startup Lab", "relevance": "low"} ]
+		{ "level": "Transition", "sector": "Process","name": "","id":"","fullname": "","desc": "write description", "relevance": "",	"children": [ 
+			{ "level": "Live","name": "","id":"","fullname": "","desc": "write description", "relevance": "", "children": [
+				{"level": "Solution Validation", "name": "","children": [
+					{ "level": "Opportunity", "id":"","fullname": "ASP SLA Standadization", "name": "ASP SLA", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "WEM Platform Engagement Process", "name": "WEM PEP", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "IT Mobile App Engagement", "name": "IT MAE", "desc": "write description", "relevance": "low"},
+					{ "level": "Opportunity", "id":"","fullname": "Startup lab","name": "Startup Lab", "desc": "write description", "relevance": "low"} ]
 				} ]
 			} ]
 		},
-		{ "level": "2", "name": "","fullname": "","relevance": "","sector": "Web Platform","children": [ 
-			{"level": "3","name": "CQ P1","fullname": "ADOBE CQ Phase1","relevance": "high","children": [
-				{ "level": "4", "name": "","children": [
-					{ "level": "5", "fullname": "External API Standard", "name": "E API S", "relevance": "medium"},
-					{ "level": "5", "fullname": "Smart Connected Experience", "name": "SCE", "relevance": "high"},
-					{ "level": "5", "fullname": "UI Market place", "name": "UIM", "relevance": "high"},
-					{ "level": "5", "fullname": "ADOBE CQ on Cloud","name": "CQ On Cloud", "relevance": "high"},
-					{ "level": "5", "fullname": "ADOBE CQ Commerce Engine", "name": "CQ CE", "relevance": "high"},
-					{ "level": "5", "fullname": "ADOBE CQ Experience Personalization", "name": "CQ EP", "relevance": "high"},
-					{ "level": "5", "fullname": "Localization Capability", "name": "LC", "relevance": "medium"},
-					{ "level": "5", "fullname": "Tag Management", "name": "TM", "relevance": "high"} ]
+		{ "level": "Transition", "sector": "Web Platform","name": "","id":"","fullname": "","desc": "write description", "relevance": "","children": [ 
+			{"level": "Live","name": "CQ P1","id":"7","fullname": "ADOBE CQ Phase1","desc": "write description", "relevance": "high","children": [
+				{ "level": "Solution Validation", "name": "","children": [
+					{ "level": "Opportunity", "id":"","fullname": "External API Standard", "name": "E API S", "desc": "write description", "relevance": "medium"},
+					{ "level": "Opportunity", "id":"","fullname": "Smart Connected Experience", "name": "SCE", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "UI Market place", "name": "UIM", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "ADOBE CQ on Cloud","name": "CQ On Cloud", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "ADOBE CQ Commerce Engine", "name": "CQ CE", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "ADOBE CQ Experience Personalization", "name": "CQ EP", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "Localization Capability", "name": "LC", "desc": "write description", "relevance": "medium"},
+					{ "level": "Opportunity", "id":"","fullname": "Tag Management", "name": "TM", "desc": "write description", "relevance": "high"} ]
 				} ]
 			} ]
 		},
-		{ "level": "2", "name": "","fullname": "","relevance": "","sector": "Resiliency & Performance", "children": [ 
-			{ "level": "3","name": "","fullname": "","relevance": "","children": [
-				{ "level": "4", "name": "A EDOS","fullname": "Akamai Edge DOS","relevance": "medium","children": [
-					{ "level": "5", "fullname": "", "name": "", "relevance": ""} ]
+		{ "level": "Transition", "sector": "Resiliency & Performance","name": "","id":"","fullname": "","desc": "write description", "relevance": "", "children": [ 
+			{ "level": "Live","name": "","id":"","fullname": "","desc": "write description", "relevance": "","children": [
+				{ "level": "Solution Validation", "name": "A EDOS","id":"","fullname": "Akamai Edge DOS","desc": "write description", "relevance": "medium","children": [
+					{ "level": "Opportunity", "id":"","fullname": "", "name": "", "desc": "write description", "relevance": ""} ]
 				},
-				{ "level": "4", "name": "A RUM","fullname": "Akamai RUM","relevance": "medium","children": [
-					{ "level": "5", "fullname": "", "name": "", "relevance": ""} ]
+				{ "level": "Solution Validation", "name": "A RUM","id":"","fullname": "Akamai RUM","desc": "write description", "relevance": "medium","children": [
+					{ "level": "Opportunity", "id":"","fullname": "", "name": "", "desc": "write description", "relevance": ""} ]
 				} ]
 			} ]
 		} ]
