@@ -33,7 +33,7 @@
 </head>
 <body>
   <a href="/">Back</a><br>
-
+<div></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
@@ -60,12 +60,13 @@ function getUrlParameter(sParam)
 var id = getUrlParameter('id');
 console.log(id);
 
-$.getJSON( "techradar.json", function( json ) {
-for(var entry in json) {
-    console.log("blah= "+json.entry[name]);
-}
 
- });
+
+$.getJSON("techradar.json",function(result){
+    $.each(result, function(i, id){
+      console.log(id);
+    });
+  });
 
 
 </script>
