@@ -9,15 +9,30 @@
 
 </head>
 <body>
-  <a href="/">Back</a><br>
-  <div id="entireJSON" align="center">
-  </div>
+<p>
+  <div class="container container-narrow">
 
-  <div id="opportunity"></div>
-  <div id="description"></div>
-<div></div>
+    <button type="button" id="back-btn" class="btn btn-primary" onclick="window.location = '/'">
+  Back
+</button><p>
+        <div class="jumbotron" id="entireJSON">
+          
+        </div>
+      </div>
+
 
 <style>
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 800px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
 #divElement{
     position: absolute;
     top: 50%;
@@ -55,7 +70,7 @@ function getUrlParameter(sParam)
 var urlid = getUrlParameter('id');
 console.log(urlid);
 
-
+if (urlid != "") {
 $.getJSON("techradar.json",function(result){
     $.each(result, function(i, id){
       if(i == urlid - 1)
@@ -64,10 +79,9 @@ $.getJSON("techradar.json",function(result){
         var disp = "";
         for(k in keys)
         {
-          disp += ("<h1><u>" + keys[k] + "</u></h1>");
-          var val = (id[keys[k]] != "") ? id[keys[k]] : "N/A!";
-          disp += ("<h3>" + val + "</h3>");
-          disp += ("</br>" + "</br>");
+          disp += ("<h4><span class='label label-success'>" + keys[k] + "</span></h4>");
+          var val = (id[keys[k]] != "") ? id[keys[k]] : "N/A";
+          disp += (val + "<br><br>");
           console.log("KEY: " + keys[k] + ", VALUE: " + id[keys[k]]);
         }
 
@@ -76,7 +90,11 @@ $.getJSON("techradar.json",function(result){
       }
     });
   });
-
+}
+else
+{
+  document.getElementById("entireJSON").innerHTML="No information was found";
+}
 
 
 

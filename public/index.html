@@ -32,7 +32,7 @@
   </style>
 </head>
 <body>
-  <a href="/images">Images</a> <a href="test.html">Tooltips</a> <a href="test2.html">Labels</a><br>
+  <a href="/images">Images</a><br>
 
 
 
@@ -58,7 +58,7 @@ var x = d3.scale.linear()
     .attr("width", width)
     .attr("height", height)
     .append("g") // adding group of objects
-    .attr("transform", "translate(" + width / 2 + "," + (height / 2 + 10) + ") rotate(247)"); // rotates since usually starts at 12 position
+    .attr("transform", "translate(" + width / 2 + "," + (height/2 + 50) + ") rotate(247)"); // rotates since usually starts at 12 position
 
     // Define 'div' for tooltips
     var div = d3.select("body")
@@ -95,7 +95,7 @@ var arc = d3.svg.arc()
 .startAngle(function(d) { return Math.max(0, Math.min(1.25 * Math.PI, x(d.x))); })
 .endAngle(function(d) { return Math.max(0, Math.min(1.25 * Math.PI, x(d.x + d.dx))); })
 .innerRadius(function(d) { return Math.max(0, y(d.y)); })
-.outerRadius(function(d) { return Math.max(0, y(d.y + d.dy)); })
+.outerRadius(function(d) { return Math.max(0, y(d.y + d.dy + .1)); })
 
 
 
@@ -115,14 +115,12 @@ d3.json("DTV1.json", function(error, root) {
 			//return color((d.children ? d : d.parent).level);});
 
   var text = g.append("text")
-	.attr("transform", function(d) { return "rotate(" + computeTextRotation(d)  + ")"; })
+	.attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
 	.attr("x", function(d) { 
-    if(d.stage)
-     return d.y; 
-   else
-     return y(d.y); })
-    .attr("dx", "20") // margin
-    .attr("dy", ".35em") // vertical-align
+       return y(d.y); 
+  })
+    .attr("dx", "20") // margin between dots and text
+    .attr("dy", ".35em") // vertical-align (line up with dots)
     .text(function(d) { return d.name; } )
     // tool tip stuff
     .on("mouseover", function(d) {    
@@ -207,23 +205,14 @@ d3.json("DTV1.json", function(error, root) {
 
 d3.select(self.frameElement).style("height", height + "px");
 
-// Interpolate the scales!
-function arcTween(d) {
-  var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
-  yd = d3.interpolate(y.domain(), [d.y, 1]),
-  yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
-  return function(d, i) {
-    return i
-    ? function(t) { return arc(d); }
-    : function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); return arc(d); };
-  };
-}
 
 
 // rotating the text on the arcs
 function computeTextRotation(d) {
  var t = (x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
-	//return (t > 90) ? 180 + t : t;
+	//if (t > 30) {
+    //transform (d)
+  //}
 	return t;
 }
 

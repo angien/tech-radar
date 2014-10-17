@@ -1,0 +1,44 @@
+{ "level": "root", "name": "", "id":"","fullname": "", "desc": "write description", "relevance": "", "children": [
+		{ "level": "Transition","sector": "Cisco on Cisco","name": "","id":"","fullname": "","desc": "write description", "relevance": "","children": [ 
+			{ "level": "Live","name": "","id":"","fullname": "","desc": "write description", "relevance": "","children": [
+				{ "level": "Solution Validation", "name": "","children": [
+					{ "level": "Opportunity", "id":"","fullname": "Cisco Network Convergence System", "name": "CNCS", "desc": "write description", "relevance": "medium"},
+					{ "level": "Opportunity", "id":"","fullname": "Smart Experience Kisko","name": "SEK", "desc": "write description", "relevance": "medium"} ]
+				} ]
+			} ]
+		},
+		{ "level": "Transition", "sector": "Process","name": "","id":"","fullname": "","desc": "write description", "relevance": "",	"children": [ 
+			{ "level": "Live","name": "","id":"","fullname": "","desc": "write description", "relevance": "", "children": [
+				{"level": "Solution Validation", "name": "","children": [
+					{ "level": "Opportunity", "id":"","fullname": "ASP SLA Standadization", "name": "ASP SLA", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "WEM Platform Engagement Process", "name": "WEM PEP", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "IT Mobile App Engagement", "name": "IT MAE", "desc": "write description", "relevance": "low"},
+					{ "level": "Opportunity", "id":"","fullname": "Startup lab","name": "Startup Lab", "desc": "write description", "relevance": "low"} ]
+				} ]
+			} ]
+		},
+		{ "level": "Transition", "sector": "Web Platform","name": "","id":"","fullname": "","desc": "write description", "relevance": "","children": [ 
+			{"level": "Live","name": "CQ P1","id":"7","fullname": "ADOBE CQ Phase1","desc": "write description", "relevance": "high","children": [
+				{ "level": "Solution Validation", "name": "","children": [
+					{ "level": "Opportunity", "id":"","fullname": "External API Standard", "name": "E API S", "desc": "write description", "relevance": "medium"},
+					{ "level": "Opportunity", "id":"","fullname": "Smart Connected Experience", "name": "SCE", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "UI Market place", "name": "UIM", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "ADOBE CQ on Cloud","name": "CQ On Cloud", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "ADOBE CQ Commerce Engine", "name": "CQ CE", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "ADOBE CQ Experience Personalization", "name": "CQ EP", "desc": "write description", "relevance": "high"},
+					{ "level": "Opportunity", "id":"","fullname": "Localization Capability", "name": "LC", "desc": "write description", "relevance": "medium"},
+					{ "level": "Opportunity", "id":"","fullname": "Tag Management", "name": "TM", "desc": "write description", "relevance": "high"} ]
+				} ]
+			} ]
+		},
+		{ "level": "Transition", "sector": "Resiliency & Performance","name": "","id":"","fullname": "","desc": "write description", "relevance": "", "children": [ 
+			{ "level": "Live","name": "","id":"","fullname": "","desc": "write description", "relevance": "","children": [
+				{ "level": "Solution Validation", "name": "A EDOS","id":"","fullname": "Akamai Edge DOS","desc": "write description", "relevance": "medium","children": [
+					{ "level": "Opportunity", "id":"","fullname": "", "name": "", "desc": "write description", "relevance": ""} ]
+				},
+				{ "level": "Solution Validation", "name": "A RUM","id":"","fullname": "Akamai RUM","desc": "write description", "relevance": "medium","children": [
+					{ "level": "Opportunity", "id":"","fullname": "", "name": "", "desc": "write description", "relevance": ""} ]
+				} ]
+			} ]
+		} ]
+}
